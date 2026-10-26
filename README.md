@@ -1,34 +1,49 @@
-Susan Aben — Creative Designer & Developer
-Meta Vision / Portfolio 2.0 is a custom WordPress portfolio designed and developed by Susan Aben. It brings together visual design, front-end development, interactive storytelling, and selected project case studies in a responsive interface.
+# Susan Aben — Portfolio V3
 
-Highlights
-- Custom-built WordPress theme, without a page builder or front-end framework for the portfolio itself.
-- Animated hero and responsive sidebar/mobile navigation.
-- Featured Klaben Autos case study with switchable Design, Development, and CMS & Workflow previews.
-- Project archive featuring client work and applications built with different technologies.
-- Interactive Lab and Behind the Build sections.
-- Dark and light themes, plus Dutch and English content via TranslatePress.
-- Dedicated case-study layouts, accessibility details, and reduced-motion support.
-- Responsive image delivery and performance-focused asset loading.
-Technology
-This WordPress theme: PHP, WordPress, HTML, CSS, vanilla JavaScript, and TranslatePress.
+**Creative Designer & Developer** · Tilburg, the Netherlands
 
-Technologies featured in the projects: Laravel, MySQL, React, TypeScript, Tailwind CSS, WooCommerce, and C#/.NET, among others. These are showcased in the portfolio; they are not all dependencies of the portfolio theme.
+A custom WordPress portfolio where **design meets development**. Portfolio V3 brings together interactive storytelling, thoughtful UI, subtle motion, and selected projects in one responsive experience.
 
-The theme does not require a Node.js build step.
-Selected work
-Project	Focus
-Klaben Autos	UX/UI, custom WordPress theme, vehicle workflows
-Clientboard	Laravel application for projects, clients, and deadlines
-EventFlow	React and TypeScript event-discovery interface
-EHBO Petrus Donders	Custom WordPress website for an association
-NoordgroeiT	Community-oriented WordPress platform
-Cartnip	WooCommerce storefront concept
-Wobbi	C#/.NET desktop companion, showcased as a case study
+**Custom WordPress theme** · **Dark & light mode** · **NL / EN** · **Responsive design**
 
+---
 
-Additional work-in-progress concepts appear in the portfolio's In de maak section.
-Theme structure
+## ✨ Highlights
+
+- **Immersive homepage** — animated hero, custom sidebar navigation, and mobile-friendly layouts.
+- **Featured Klaben Autos project** — interactive Design, Development, and CMS & Workflow previews, with links to the case study and live demo.
+- **Selected work archive** — client websites, creative experiments, and full-stack applications.
+- **Interactive Lab & Behind the Build** — a playful look at the tools and ideas behind the work.
+- **Dedicated case studies** — consistent project pages for deeper exploration.
+- **Thoughtful implementation** — reduced-motion support, responsive images, and accessibility-minded interactions.
+
+## 🛠️ Technology
+
+| This portfolio is built with | Used in featured projects |
+| --- | --- |
+| WordPress, PHP, HTML, CSS, vanilla JavaScript | Laravel, MySQL, React, TypeScript, Tailwind CSS, WooCommerce, C#/.NET |
+
+The portfolio itself uses a **custom WordPress theme**, without a page builder or front-end JavaScript framework. **TranslatePress** handles Dutch and English content.
+
+> Technologies shown in project case studies are not necessarily dependencies of this WordPress theme. No Node.js build step is required to run the theme.
+
+## 💼 Selected work
+
+| Project | Focus |
+| --- | --- |
+| **Klaben Autos** | UX/UI, custom WordPress development, automotive workflows |
+| **Clientboard** | Laravel application for clients, projects, and deadlines |
+| **EventFlow** | React and TypeScript event-discovery application |
+| **EHBO Petrus Donders** | Custom WordPress website for an association |
+| **NoordgroeiT** | Community-focused WordPress platform |
+| **Cartnip** | WooCommerce storefront concept |
+| **Wobbi** | C#/.NET desktop companion, presented as a case study |
+
+Additional experiments and works in progress appear in the portfolio's *In de maak* section.
+
+## 📁 Theme structure
+
+```text
 susan-portfolio/
 ├── assets/
 │   ├── css/
@@ -48,25 +63,37 @@ susan-portfolio/
 ├── page-*.php
 ├── style.css
 └── README.md
-Running locally
-1. Set up a local WordPress installation (for example, with LocalWP).
-2. Place the theme folder in wp-content/themes/susan-portfolio/.
-3. Activate Susan Aben Portfolio under Appearance → Themes.
-4. Set up the site's pages and homepage in WordPress to match the templates.
-5. Install and configure TranslatePress if you want the Dutch/English experience.
-Translation note: TranslatePress translations and WordPress settings are stored in the site's database. Cloning this theme repository alone does not reproduce those translations or settings.
+```
 
-No API keys or credentials should be committed to this repository.
-Performance and accessibility
-During local Lighthouse testing (October 2026), the portfolio achieved:
-Audit	Mobile	Desktop
-Performance	90	99
-Accessibility	100	100
-SEO	100	100
+## 🚀 Run locally
 
+1. Install WordPress locally (for example, using **LocalWP**).
+2. Place this repository in `wp-content/themes/susan-portfolio/`.
+3. Activate the theme in **Appearance → Themes**.
+4. Set up the required WordPress pages and homepage.
+5. Install and configure **TranslatePress** for Dutch/English content.
 
-Best Practices measured 78 on the local HTTP development address. An HTTPS production audit is needed to evaluate the deployed site; these local results are not guarantees of production performance.
-About
-Designed and developed by Susan Aben, based in Tilburg, the Netherlands.
-- GitHub profile
-This repository contains the portfolio theme, not WordPress core or the database.
+**Important:** This repository contains **theme source code only**. WordPress settings, pages, media-library data, and TranslatePress translations are stored in the site's database and are not recreated by cloning the theme.
+
+## 📊 Lighthouse results
+
+Measured on the **LocalWP development site (October 2026)**:
+
+| Audit | Mobile | Desktop |
+| --- | ---: | ---: |
+| **Performance** | **90** | **99** |
+| **Accessibility** | **100** | **100** |
+| **SEO** | **100** | **100** |
+| Best Practices | 78 | 78 |
+
+*The local development URL uses HTTP, which Lighthouse flags in Best Practices. Scores may differ on production hosting; HTTPS and production performance still need verification.*
+
+## 👋 About
+
+Designed and developed by **Susan Aben**, a creative designer and developer based in Tilburg, the Netherlands.
+
+[Explore my GitHub profile](https://github.com/Susieko)
+
+---
+
+<sub>This repository contains the custom WordPress theme—not WordPress core, site database, or private credentials.</sub>
