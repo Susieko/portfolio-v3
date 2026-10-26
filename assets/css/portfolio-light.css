@@ -1,0 +1,1079 @@
+
+/* Portfolio 2.0 — Daylight Mode
+   Load this AFTER all other theme styles.
+   Dark remains the default.
+*/
+
+html[data-portfolio-theme="light"] {
+    color-scheme: light;
+    --day-bg: #f4f5fd;
+    --day-panel: #ffffff;
+    --day-soft: #e9edfa;
+    --day-ink: #222947;
+    --day-copy: #53617e;
+    --day-purple: #6c50b4;
+    --day-line: rgba(80, 76, 138, .18);
+}
+
+html[data-portfolio-theme="light"]
+:is(body, .site-shell, .site-content) {
+    background: var(--day-bg);
+    color: var(--day-ink);
+}
+
+/* HERO — brighter indigo, preserving the portrait */
+
+html[data-portfolio-theme="light"] body.home .meta-hero {
+    background:
+        radial-gradient(
+            ellipse at 84% 35%,
+            rgba(154,174,248,.24),
+            transparent 50%
+        ),
+        linear-gradient(
+            110deg,
+            #11172f,
+            #213262 65%,
+            #40558c
+        );
+    color: #f8f7ff;
+}
+
+html[data-portfolio-theme="light"]
+body.home .meta-hero::after {
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--day-bg)
+        );
+}
+
+html[data-portfolio-theme="light"]
+body.home .meta-hero
+:is(
+    .meta-hero__title,
+    .meta-hero__eyebrow,
+    .meta-hero__role
+) {
+    color: #faf8ff;
+}
+
+html[data-portfolio-theme="light"]
+body.home .meta-hero
+:is(
+    .meta-hero__tags span,
+    .meta-hero__availability,
+    .meta-hero__cta,
+    .meta-hero__github
+) {
+    background: rgba(11,20,53,.3);
+    border-color: rgba(225,216,255,.4);
+    color: #f9f7ff;
+}
+
+/* SIDEBAR — preserve existing shaped rail */
+
+html[data-portfolio-theme="light"]
+.sidebar__link.is-active .sidebar__label,
+html[data-portfolio-theme="light"]
+.sidebar__link.is-active .sidebar__icon {
+    color: var(--day-purple);
+}
+
+/* ALL HOMEPAGE SECTIONS */
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) {
+    background:
+        radial-gradient(
+            ellipse at 90% 10%,
+            rgba(176,167,237,.14),
+            transparent 46%
+        ),
+        linear-gradient(
+            180deg,
+            #f5f6fe,
+            #f0f2fc
+        );
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(h2, h3) {
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(h2, h3) em {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(p, small) {
+    color: var(--day-copy);
+}
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(
+    .klaben-feature__eyebrow,
+    .p2-gallery__eyebrow,
+    .p2-making__eyebrow,
+    .p2-offers__eyebrow,
+    .p2-playlab__eyebrow,
+    .v2-about__eyebrow,
+    .v2-contact__eyebrow
+) {
+    color: var(--day-purple);
+}
+
+/* 01 / FEATURED WORK */
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapters {
+    background:
+        linear-gradient(120deg, #fff, #edf0ff);
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapter {
+    background: #f5f6ff;
+    border-color: var(--day-line);
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapter:is(:hover, .is-active) {
+    background: #e9e4fb;
+    border-color: #a18bda;
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapter-copy strong {
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .klaben-feature__aside-label,
+    .klaben-feature__chapter-number,
+    .klaben-feature__type
+) {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__detail {
+    border-color: var(--day-line);
+}
+
+/* Keep the video presentation dark */
+
+html[data-portfolio-theme="light"]
+.klaben-feature__stage {
+    background: #101831;
+    border-color: rgba(91,68,165,.35);
+    box-shadow:
+        0 24px 60px rgba(39,42,91,.17);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__stage-foot,
+html[data-portfolio-theme="light"]
+.klaben-feature__stage-foot span {
+    color: #e5e0fb;
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__case-cta {
+    background: var(--day-purple);
+    border-color: var(--day-purple);
+    color: #fff;
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__stack span {
+    color: #516080;
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__footer a {
+    color: var(--day-purple);
+}
+
+/* 02 / THE WORK ARCHIVE */
+
+html[data-portfolio-theme="light"] .p2-gallery {
+    --gallery-bg: #f4f5fd;
+    --gallery-text: #222947;
+    --gallery-muted: #53617e;
+    --gallery-lavender: #6c50b4;
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-gallery__project,
+    .p2-gallery__discipline,
+    .p2-gallery__discipline > div + div,
+    .p2-gallery__footer
+) {
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__tags li {
+    background: #ebedfa;
+    border-color: var(--day-line);
+    color: #4e5c7d;
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__visual {
+    background:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(163,145,232,.25),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #e7eafb,
+            #d9dff4
+        );
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-gallery__meta,
+    .p2-gallery__discipline-title,
+    .p2-gallery__story h3 span
+) {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__action--primary {
+    background: var(--day-purple);
+    border-color: var(--day-purple);
+    color: #fff;
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__action--secondary {
+    background: #fff;
+    border-color: #aa9bd5;
+    color: #55408f;
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__footer a {
+    color: var(--day-purple);
+}
+
+/* 03 / IN DE MAAK */
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-making__feature,
+    .p2-making__mini,
+    .p2-making__feature-copy,
+    .p2-making__mini-copy
+) {
+    background: #fff;
+    border-color: var(--day-line);
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+.p2-making__experimental-heading {
+    border-color: var(--day-line);
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+.p2-making__meta {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+.p2-making__stack {
+    color: #63708d;
+}
+
+/* Pip and Wobbi retain their own mini-stage colors */
+
+/* 04 / DIENSTEN */
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-offers__card,
+    .p2-offers__body
+) {
+    background: #fff;
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__tags li {
+    background: #f0f1fc;
+    border-color: var(--day-line);
+    color: #52617f;
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-offers__meta,
+    .p2-offers__icon
+) {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__approach {
+    background:
+        linear-gradient(
+            110deg,
+            #e5e6fa,
+            #f8f8ff
+        );
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__approach-copy p {
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__more {
+    background: #fff;
+    border-color: #b1a2d9;
+    color: #5c469a;
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__intro a.p2-offers__cta {
+    background: var(--day-purple);
+    border-color: var(--day-purple);
+    color: #fff;
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__image-label {
+    color: #fff;
+}
+
+/* 05 / THE LAB */
+
+html[data-portfolio-theme="light"]
+.p2-playlab__tile {
+    background: #fff;
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-playlab__tile-head,
+    .p2-playlab__closing
+) {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-playlab__tile-head span:last-child,
+    .p2-playlab__tile-foot > span
+) {
+    color: #627091;
+}
+
+html[data-portfolio-theme="light"]
+.p2-playlab__tile-foot {
+    background: #fff;
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.p2-playlab__tile-foot strong {
+    color: var(--day-ink);
+}
+
+/* Dark interactive mini-canvases */
+
+html[data-portfolio-theme="light"]
+.p2-playlab__stage {
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            #29355f,
+            #121a39 75%
+        );
+}
+
+html[data-portfolio-theme="light"]
+.p2-playlab__living-word {
+    color: #f6f0ff;
+}
+
+/* 06 / BEHIND THE BUILD */
+
+html[data-portfolio-theme="light"]
+#about :is(
+    .v2-about__tech-shelf,
+    .v2-about__shelf,
+    .v2-about__skills,
+    .v2-about__panel,
+    .v2-about__example,
+    .p2-about-invite
+) {
+    background:
+        linear-gradient(
+            130deg,
+            #fff,
+            #edf0ff
+        );
+    border-color: var(--day-line);
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+#about :is(button, [role="button"]) {
+    color: #475778;
+}
+
+html[data-portfolio-theme="light"]
+#about :is(
+    button.is-active,
+    button.is-selected,
+    [aria-pressed="true"]
+) {
+    background: #e5e0f8;
+    border-color: #977ecf;
+    color: #4f388d;
+}
+
+html[data-portfolio-theme="light"]
+.p2-about-invite__title {
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+.p2-about-invite__button {
+    background: var(--day-purple);
+    border-color: var(--day-purple);
+    color: #fff;
+}
+
+/* 07 / CONTACT */
+
+html[data-portfolio-theme="light"]
+#contact :is(
+    .v2-contact__panel,
+    .v2-contact__signal,
+    .v2-contact__connection,
+    .v2-contact__window,
+    .v2-contact__card
+) {
+    background:
+        linear-gradient(
+            130deg,
+            #fff,
+            #edf0ff
+        );
+    border-color: var(--day-line);
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+#contact :is(
+    .v2-contact__panel,
+    .v2-contact__signal,
+    .v2-contact__connection,
+    .v2-contact__window
+) :is(strong, h3, a) {
+    color: var(--day-ink);
+}
+
+html[data-portfolio-theme="light"]
+.p2-contact-cta--primary {
+    background: var(--day-purple);
+    border-color: var(--day-purple);
+    color: #fff;
+}
+
+html[data-portfolio-theme="light"]
+.p2-contact-cta--secondary {
+    background: #fff;
+    border-color: #afa0d8;
+    color: #594397;
+}
+
+html[data-portfolio-theme="light"]
+.p2-contact-star {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+#contact footer {
+    border-color: var(--day-line);
+}
+
+/* CASE STUDIES — match the new daytime palette */
+
+html[data-portfolio-theme="light"]
+body:has(.mv-case) .site-content {
+    background: var(--day-bg);
+}
+
+html[data-portfolio-theme="light"] .mv-case {
+    --case-accent: #6c50b4;
+    --case-white: #222947;
+    --case-copy: #53617e;
+    --case-muted: #647291;
+    --case-line: var(--day-line);
+
+    background:
+        radial-gradient(
+            ellipse at 92% 9%,
+            rgba(176,167,237,.15),
+            transparent 45%
+        ),
+        #f4f5fd;
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .mv-case__facts > div,
+    .mv-case__statement
+) {
+    background:
+        linear-gradient(
+            120deg,
+            #fff,
+            #edf0ff
+        );
+    border-color: var(--day-line);
+}
+
+html[data-portfolio-theme="light"]
+.mv-case__chapter.is-current h3,
+html[data-portfolio-theme="light"]
+.mv-case__chapter.is-current
+.mv-case__chapter-number {
+    color: var(--day-purple);
+}
+
+html[data-portfolio-theme="light"]
+:is(.mv-case-browser, .mv-case-phone) {
+    background: #101831;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(a, button):focus-visible {
+    outline: 2px solid var(--day-purple);
+    outline-offset: 3px;
+}
+
+
+/* ================================================
+   PORTFOLIO 2.0 — DAYLIGHT COLOR REFINEMENT
+   More color, less white, same galaxy identity
+   ================================================ */
+
+html[data-portfolio-theme="light"] {
+    --day-bg: #e3e7f6;
+    --day-panel: #eeedfa;
+    --day-soft: #dde4f5;
+    --day-ink: #252b55;
+    --day-copy: #485677;
+    --day-purple: #7152b8;
+    --day-line: rgba(82, 74, 147, .2);
+}
+
+/* MAIN BACKGROUND */
+
+html[data-portfolio-theme="light"]
+:is(body, .site-shell, .site-content) {
+    background: #e3e7f6;
+}
+
+/* ================================================
+   INDIVIDUAL SECTION ATMOSPHERES
+   ================================================ */
+
+/* FEATURED — soft periwinkle */
+
+html[data-portfolio-theme="light"] body.home
+.klaben-feature {
+    background:
+        radial-gradient(
+            ellipse at 85% 20%,
+            rgba(160, 145, 224, .25),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #dce3f6,
+            #e5e2f7
+        );
+}
+
+/* ARCHIVE — cool blue */
+
+html[data-portfolio-theme="light"] body.home
+.p2-gallery {
+    background:
+        radial-gradient(
+            ellipse at 20% 35%,
+            rgba(126, 169, 218, .16),
+            transparent 50%
+        ),
+        #dce7f6;
+}
+
+/* IN DE MAAK — lavender */
+
+html[data-portfolio-theme="light"] body.home
+.p2-making {
+    background:
+        radial-gradient(
+            ellipse at 80% 15%,
+            rgba(165, 135, 216, .23),
+            transparent 53%
+        ),
+        #e5def4;
+}
+
+/* DIENSTEN — powder blue */
+
+html[data-portfolio-theme="light"] body.home
+.p2-offers {
+    background:
+        radial-gradient(
+            ellipse at 90% 70%,
+            rgba(145, 179, 224, .22),
+            transparent 52%
+        ),
+        #dce4f4;
+}
+
+/* THE LAB — more purple, more playful */
+
+html[data-portfolio-theme="light"] body.home
+.p2-playlab {
+    background:
+        radial-gradient(
+            ellipse at 17% 15%,
+            rgba(158, 129, 215, .24),
+            transparent 55%
+        ),
+        #e4dff4;
+}
+
+/* ================================================
+   FEATURED — LAVENDER CHAPTER SELECTOR
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapters {
+    background: linear-gradient(
+        125deg,
+        #e8e2f7,
+        #dce4f5
+    );
+    border-color: rgba(111, 88, 170, .25);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapter {
+    background: rgba(246, 244, 255, .48);
+    border-color: rgba(111, 88, 170, .2);
+}
+
+html[data-portfolio-theme="light"]
+.klaben-feature__chapter.is-active {
+    background: #d6caf0;
+    border-color: #9177ca;
+}
+
+/* ================================================
+   ARCHIVE — TINTED VISUAL STAGES
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+.p2-gallery__visual {
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(159, 138, 216, .31),
+            transparent 70%
+        ),
+        linear-gradient(
+            145deg,
+            #d0d9ef,
+            #d9d5ec
+        );
+}
+
+html[data-portfolio-theme="light"]
+.p2-gallery__tags li {
+    background: rgba(233, 226, 249, .85);
+    color: #51476f;
+}
+
+/* ================================================
+   IN DE MAAK — LAVENDER PROJECT CARDS
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+.p2-making__feature {
+    background: #eee9f9;
+    border-color: rgba(112, 91, 174, .25);
+}
+
+html[data-portfolio-theme="light"]
+.p2-making__mini {
+    background: #ece7f8;
+    border-color: rgba(112, 91, 174, .25);
+}
+
+html[data-portfolio-theme="light"]
+:is(
+    .p2-making__feature-copy,
+    .p2-making__mini-copy
+) {
+    background: #eee9f9;
+}
+
+/* Keep character art dark and colorful */
+
+html[data-portfolio-theme="light"]
+.p2-making__mini-visual {
+    background: #20274d;
+}
+
+/* ================================================
+   DIENSTEN — THREE DISTINCT CARD TINTS
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(1),
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(1) .p2-offers__body {
+    background: #eee8fa;
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(2),
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(2) .p2-offers__body {
+    background: #e6ebfa;
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(3),
+html[data-portfolio-theme="light"]
+.p2-offers__card:nth-child(3) .p2-offers__body {
+    background: #e2edf0;
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__card {
+    border-color: rgba(94, 92, 154, .25);
+}
+
+html[data-portfolio-theme="light"]
+.p2-offers__approach {
+    background: linear-gradient(
+        110deg,
+        #d8d1f0,
+        #e2e6f7
+    );
+}
+
+/* ================================================
+   LAB — SOFT LAVENDER CARD SHELLS
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+.p2-playlab__tile,
+html[data-portfolio-theme="light"]
+.p2-playlab__tile-foot {
+    background: #eae6f8;
+    border-color: rgba(112, 91, 174, .24);
+}
+
+/* The interactive stages remain dark.
+   That's where the glow and motion look best. */
+
+/* ================================================
+   ABOUT — BLUE-TINTED TECH SHELF
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+#about :is(
+    .v2-about__tech-shelf,
+    .v2-about__shelf,
+    .v2-about__skills,
+    .v2-about__panel,
+    .v2-about__example
+) {
+    background: linear-gradient(
+        130deg,
+        #e6ecf9,
+        #dadff2
+    );
+    border-color: rgba(82, 93, 155, .22);
+}
+
+html[data-portfolio-theme="light"]
+.p2-about-invite {
+    background: linear-gradient(
+        130deg,
+        #dcd4f1,
+        #e6eaf7
+    );
+}
+
+/* ================================================
+   CONTACT — LAVENDER CONNECTION PANEL
+   ================================================ */
+
+html[data-portfolio-theme="light"]
+#contact :is(
+    .v2-contact__panel,
+    .v2-contact__signal,
+    .v2-contact__connection,
+    .v2-contact__window,
+    .v2-contact__card
+) {
+    background: linear-gradient(
+        140deg,
+        #e9e4f8,
+        #dfe4f5
+    );
+    border-color: rgba(112, 91, 174, .25);
+}
+
+/* ================================================
+   REFINED TEXT CONTRAST
+   ================================================ */
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(h2, h3) {
+    color: #252b55;
+}
+
+html[data-portfolio-theme="light"] body.home
+:is(
+    .klaben-feature,
+    .p2-gallery,
+    .p2-making,
+    .p2-offers,
+    .p2-playlab,
+    #about,
+    #contact
+) :is(p, small) {
+    color: #485677;
+}
+
+
+/* ==========================================
+   LIGHT MODE — BUILD & CONTACT BACKGROUNDS
+   One cohesive lavender-blue atmosphere
+   ========================================== */
+
+/* ==========================================
+   LIGHT MODE — SEAMLESS PAGE BACKGROUND
+   ========================================== */
+
+html[data-portfolio-theme="light"] body.home
+:is(.p2-playlab, #about, #contact) {
+    background: #f0f2fc;
+    background-image: none;
+}
+
+
+/* ==========================================
+   PORTFOLIO 2.0 — MOBILE QA FIXES
+   ========================================== */
+
+/* 02 — Readable mobile navigation in light mode */
+@media (max-width: 800px) {
+    html[data-portfolio-theme="light"]
+    .sidebar.is-open .sidebar__navigation
+    .sidebar__link:not(.is-active) {
+        color: #47547e !important;
+        opacity: 1 !important;
+    }
+
+    html[data-portfolio-theme="light"]
+    .sidebar.is-open .sidebar__link
+    .sidebar__label,
+    html[data-portfolio-theme="light"]
+    .sidebar.is-open .sidebar__link
+    .sidebar__icon {
+        color: inherit !important;
+        opacity: 1 !important;
+    }
+
+    html[data-portfolio-theme="light"]
+    .sidebar.is-open .sidebar__link.is-active {
+        color: #694db6 !important;
+    }
+}
+
+/* ==========================================
+   LIGHT MODE — TECH SHELF CONTRAST
+   ========================================== */
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable {
+    color: #e9edff !important;
+}
+
+/* All panel text */
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable
+:is(p, span, small, strong, h2, h3, h4, h5, label) {
+    color: #dce5ff !important;
+    opacity: 1 !important;
+}
+
+/* Technology buttons */
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable
+:is(button, [role="button"]) {
+    color: #dce5ff !important;
+    opacity: 1 !important;
+}
+
+/* Selected technology: dark text on lavender */
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable
+:is(
+    button.is-active,
+    button.is-selected,
+    button[aria-pressed="true"],
+    [role="button"].is-active
+) {
+    background: #e5def9;
+    color: #372667 !important;
+}
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable
+:is(
+    button.is-active,
+    button.is-selected,
+    button[aria-pressed="true"],
+    [role="button"].is-active
+) :is(span, small, strong) {
+    color: #372667 !important;
+}
+
+/* Project description and links */
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable a {
+    color: #d5c4ff !important;
+}
+
+html[data-portfolio-theme="light"]
+#about .p2-tech-shelf--readable a:hover {
+    color: #ffffff !important;
+}
+
+
+/* ==========================================
+   MOBILE HERO — SHARED PORTRAIT POSITION
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    body.home .meta-hero {
+        min-height: max(900px, 100svh);
+    }
+
+    body.home .meta-hero__portrait {
+        left: auto !important;
+        right: -16% !important;
+        bottom: -16px !important;
+
+        width: min(146vw, 590px) !important;
+        height: auto !important;
+        max-width: none !important;
+
+        transform: none !important;
+    }
+
+    body.home .meta-hero__portrait img {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,1117 @@
+
+
+/* ==========================================
+   PORTFOLIO 2.0 — EDITORIAL WORK GALLERY
+   Alternating layouts, project screenshots,
+   phone mockups and matching action buttons.
+   ========================================== */
+
+.p2-gallery {
+    --gallery-bg: #070d25;
+    --gallery-text: #f5f2ff;
+    --gallery-muted: #b3c1df;
+    --gallery-lavender: #b9a7ff;
+
+    position: relative;
+    overflow: clip;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 82% 15%,
+            rgba(75, 88, 185, .13),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 15% 85%,
+            rgba(98, 73, 177, .09),
+            transparent 38%
+        ),
+        var(--gallery-bg);
+
+    color: var(--gallery-text);
+}
+
+.p2-gallery::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(185, 167, 255, .025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(185, 167, 255, .025) 1px,
+            transparent 1px
+        );
+
+    background-size: 110px 110px;
+
+    mask-image: linear-gradient(
+        transparent,
+        black 12%,
+        black 90%,
+        transparent
+    );
+}
+
+.p2-gallery * {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   SHARED WIDTH
+   ========================================== */
+
+.p2-gallery__inner {
+    width: 100%;
+    max-width: var(--p2-container, 1640px);
+
+    margin-inline: auto;
+
+    padding:
+        clamp(78px, 7vw, 122px)
+        var(--p2-gutter, 44px)
+        clamp(75px, 8vw, 120px);
+}
+
+/* ==========================================
+   SECTION HEADER
+   ========================================== */
+
+.p2-gallery__header {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(220px, 360px);
+
+    align-items: end;
+    gap: 40px;
+
+    margin-bottom: clamp(42px, 6vw, 90px);
+}
+
+.p2-gallery__eyebrow,
+.p2-gallery__meta,
+.p2-gallery__visual-label,
+.p2-gallery__footer {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: .73rem;
+    letter-spacing: .13em;
+    line-height: 1.5;
+}
+
+.p2-gallery__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin: 0 0 25px;
+
+    color: var(--gallery-lavender);
+}
+
+.p2-gallery__eyebrow span {
+    font-size: .64rem;
+}
+
+.p2-gallery__header h2 {
+    margin: 0;
+
+    font: 400 var(
+        --p2-display,
+        clamp(3rem, 4.7vw, 5rem)
+    )/1.1 "Manrope", sans-serif;
+
+    letter-spacing: -.062em;
+}
+
+.p2-gallery__header h2 em {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-weight: 500;
+    font-size: 1.16em;
+    letter-spacing: -.035em;
+
+    color: var(--gallery-lavender);
+}
+
+.p2-gallery__lead {
+    max-width: 36ch;
+    margin: 0 0 8px;
+
+    font: 400 clamp(
+        1rem,
+        1.3vw,
+        1.125rem
+    )/1.8 "Manrope", sans-serif;
+
+    color: var(--gallery-muted);
+}
+
+/* ==========================================
+   PROJECT ROWS
+   ========================================== */
+
+.p2-gallery__project {
+    --project-accent: #b9a7ff;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, .91fr)
+        minmax(0, 1.09fr);
+
+    align-items: center;
+    gap: clamp(42px, 5.5vw, 100px);
+
+    min-height: clamp(475px, 41vw, 670px);
+
+    padding: clamp(50px, 6vw, 95px) 0;
+
+    border-top: 1px solid rgba(
+        185, 167, 255, .19
+    );
+}
+
+.p2-gallery__project:first-child {
+    border-top-color: rgba(185, 167, 255, .35);
+}
+
+/* Swap the visual and text sides */
+
+.p2-gallery__project:nth-child(even) {
+    grid-template-columns:
+        minmax(0, 1.09fr)
+        minmax(0, .91fr);
+}
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__visual {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__story {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Different accents per project */
+
+.p2-gallery__project--blue {
+    --project-accent: #93b7ff;
+}
+
+.p2-gallery__project--mint {
+    --project-accent: #9bcfc8;
+}
+
+.p2-gallery__project--rose {
+    --project-accent: #d8a9d1;
+}
+
+.p2-gallery__project--peach {
+    --project-accent: #f5bb9b;
+}
+
+.p2-gallery__project--silver {
+    --project-accent: #bdc6e1;
+}
+
+/* ==========================================
+   PROJECT CONTENT
+   ========================================== */
+
+.p2-gallery__meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-transform: uppercase;
+    color: var(--project-accent);
+}
+
+.p2-gallery__meta-star {
+    font-size: .63rem;
+}
+
+.p2-gallery__story h3 {
+    margin: 13px 0 18px;
+
+    color: var(--gallery-text);
+
+    font: 500 clamp(
+        2.9rem,
+        4.35vw,
+        5.2rem
+    )/1.02 "Cormorant Garamond", Georgia, serif;
+
+    letter-spacing: -.052em;
+}
+
+.p2-gallery__story h3 span {
+    color: var(--project-accent);
+}
+
+.p2-gallery__intro {
+    max-width: 43ch;
+    margin: 0 0 21px;
+
+    color: #c5cee4;
+
+    font: 400 clamp(
+        .96rem,
+        1.15vw,
+        1.07rem
+    )/1.8 "Manrope", sans-serif;
+}
+
+/* ==========================================
+   TECH TAGS
+   ========================================== */
+
+.p2-gallery__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0 0 31px;
+}
+
+.p2-gallery__tags li {
+    padding: 7px 11px;
+
+    border: 1px solid rgba(
+        185, 167, 255, .27
+    );
+    border-radius: 50px;
+
+    background: rgba(10, 16, 43, .4);
+    color: #c2cee9;
+
+    font: 600 .7rem/1.1 "Manrope", sans-serif;
+}
+
+/* ==========================================
+   DESIGN AND DEVELOPMENT
+   ========================================== */
+
+.p2-gallery__discipline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+    margin-top: 23px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(
+        185, 167, 255, .24
+    );
+}
+
+.p2-gallery__discipline > div {
+    padding-right: 24px;
+}
+
+.p2-gallery__discipline > div + div {
+    padding: 0 0 0 24px;
+
+    border-left: 1px solid rgba(
+        185, 167, 255, .22
+    );
+}
+
+.p2-gallery__discipline-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 8px;
+
+    color: var(--project-accent);
+
+    font: 700 .73rem/1.4 "Manrope", sans-serif;
+    letter-spacing: .12em;
+}
+
+.p2-gallery__discipline p {
+    margin: 0;
+
+    color: #96a7ca;
+
+    font: 400 .85rem/1.7 "Manrope", sans-serif;
+}
+
+/* ==========================================
+   CASE + DEMO BUTTONS
+   ========================================== */
+
+.p2-gallery__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    margin-top: clamp(25px, 3vw, 36px);
+}
+
+.p2-gallery__action {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 47px;
+    min-width: 158px;
+
+    padding: 12px 20px;
+
+    border: 1px solid rgba(
+        185, 167, 255, .35
+    );
+    border-radius: 11px;
+
+    background: rgba(185, 167, 255, .07);
+
+    box-shadow: inset 0 1px rgba(
+        255, 255, 255, .035
+    );
+
+    color: #e6e1f5;
+
+    font: 700 .82rem/1.2 "Manrope", sans-serif;
+    letter-spacing: .005em;
+
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease,
+        color .25s ease;
+}
+
+/* Primary button */
+
+.p2-gallery__action--primary {
+    color: #15132c;
+    border-color: #cbbcff;
+
+    background: #cbbcff;
+
+    box-shadow:
+        0 9px 22px rgba(110, 84, 181, .16);
+}
+
+.p2-gallery__action--primary:hover {
+    color: #15132c;
+    background: #e0d8ff;
+    border-color: #e0d8ff;
+
+    box-shadow:
+        0 13px 30px rgba(124, 100, 190, .24);
+
+    transform: translateY(-2px);
+}
+
+/* Secondary button */
+
+.p2-gallery__action--secondary:hover {
+    color: #fff;
+
+    background: rgba(185, 167, 255, .16);
+    border-color: #b9a7ff;
+
+    transform: translateY(-2px);
+}
+
+/* Keyboard focus */
+
+.p2-gallery__action:focus-visible {
+    outline: 2px solid #d5c7ff;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   PROJECT VISUAL STAGE
+   ========================================== */
+
+.p2-gallery__visual {
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(360px, 33vw, 510px);
+
+    padding:
+        clamp(38px, 5%, 58px)
+        clamp(25px, 5%, 48px)
+        55px;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            ellipse at 55% 45%,
+            color-mix(
+                in srgb,
+                var(--project-accent) 19%,
+                transparent
+            ),
+            transparent 70%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(25, 36, 83, .84),
+            rgba(9, 17, 45, .86)
+        );
+}
+
+/* Decorative outline */
+
+.p2-gallery__visual::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    width: 72%;
+    height: 90%;
+
+    border: 1px solid rgba(
+        185, 167, 255, .18
+    );
+    border-radius: 18px;
+
+    transform: rotate(8deg);
+}
+
+/* Oversized background number */
+
+.p2-gallery__huge-index {
+    position: absolute;
+    top: -50px;
+    right: 6%;
+    z-index: -1;
+
+    color: rgba(185, 167, 255, .09);
+
+    font: 400 clamp(
+        8rem,
+        15vw,
+        15rem
+    )/1 "Cormorant Garamond", Georgia, serif;
+
+    user-select: none;
+}
+
+/* Ambient orbit */
+
+.p2-gallery__orbit {
+    position: absolute;
+    width: 72%;
+    aspect-ratio: 1;
+
+    right: -3%;
+    top: -10%;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(
+        185, 167, 255, .13
+    );
+
+    z-index: -1;
+    transform: rotate(-15deg);
+}
+
+.p2-gallery__orbit::after {
+    content: "";
+
+    position: absolute;
+    top: 12%;
+    right: 15%;
+
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    background: var(--project-accent);
+
+    box-shadow:
+        0 0 14px var(--project-accent);
+}
+
+/* ==========================================
+   DESKTOP SCREENSHOT
+   ========================================== */
+
+.p2-gallery__screenshot {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    max-width: 710px;
+    height: auto;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+    border: 1px solid rgba(
+        215, 220, 255, .25
+    );
+
+    background: #0a1026;
+
+    box-shadow:
+        0 29px 66px rgba(0, 0, 0, .40),
+        0 0 34px rgba(185, 167, 255, .06);
+
+    transform:
+        perspective(1400px)
+        rotateY(-2deg)
+        rotateX(1deg);
+
+    transition:
+        transform .6s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .5s ease;
+}
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__screenshot {
+    transform:
+        perspective(1400px)
+        rotateY(2deg)
+        rotateX(1deg);
+}
+
+/* Preserve the natural screenshot proportions */
+
+.p2-gallery__screenshot img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+.p2-gallery__visual:hover
+.p2-gallery__screenshot,
+.p2-gallery__visual:focus-within
+.p2-gallery__screenshot {
+    transform:
+        perspective(1400px)
+        rotateY(0)
+        rotateX(0)
+        translateY(-5px);
+
+    box-shadow:
+        0 42px 76px rgba(0, 0, 0, .45),
+        0 0 45px rgba(185, 167, 255, .12);
+}
+
+/* ==========================================
+   MOBILE DEVICE MOCKUP
+   A proper 9:19.5 aspect ratio.
+   ========================================== */
+
+.p2-gallery__mobile {
+    position: absolute;
+    bottom: -4%;
+    right: -2%;
+    z-index: 3;
+
+    width: clamp(96px, 19%, 150px);
+    height: auto;
+
+    aspect-ratio: 9 / 19.5;
+
+    padding: 5px;
+    overflow: hidden;
+
+    border: 4px solid #252a46;
+
+    border-radius:
+        clamp(18px, 2vw, 27px);
+
+    background: #080c1d;
+
+    box-shadow:
+        0 23px 50px rgba(0, 0, 0, .50),
+        0 0 0 1px rgba(220, 224, 255, .24);
+
+    transform: rotate(5deg);
+
+    transition:
+        transform .55s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Small camera cutout */
+
+.p2-gallery__mobile::before {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    z-index: 2;
+
+    width: 34%;
+    height: 7px;
+
+    border-radius: 0 0 9px 9px;
+
+    background: #0a1021;
+
+    transform: translateX(-50%);
+}
+
+/* Alternate the phone position */
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__mobile {
+    left: -2%;
+
+    transform: rotate(-5deg);
+}
+
+.p2-gallery__visual:hover
+.p2-gallery__mobile {
+    transform:
+        rotate(0)
+        translateY(-5px);
+}
+
+.p2-gallery__mobile img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 12px;
+}
+
+/* No phone screenshot? Keep desktop centered. */
+
+.p2-gallery__visual--solo
+.p2-gallery__screenshot {
+    max-width: 690px;
+}
+
+/* ==========================================
+   IMAGE LABEL
+   ========================================== */
+
+.p2-gallery__visual-label {
+    position: absolute;
+    bottom: 3%;
+    left: 6%;
+
+    color: #d9d0fb;
+
+    font-size: .66rem;
+}
+
+/* ==========================================
+   SECTION FOOTER
+   ========================================== */
+
+.p2-gallery__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    border-top: 1px solid rgba(
+        185, 167, 255, .23
+    );
+
+    padding-top: 26px;
+
+    color: #8598c2;
+}
+
+.p2-gallery__footer a {
+    color: #d6c9ff;
+    text-decoration: none;
+}
+
+.p2-gallery__footer a:hover {
+    color: #fff;
+}
+
+/* ==========================================
+   SCROLL REVEAL
+   Never hide content unless JS initializes.
+   ========================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .p2-gallery.has-motion
+    .p2-gallery__story,
+
+    .p2-gallery.has-motion
+    .p2-gallery__visual {
+        opacity: 0;
+        transform: translateY(24px);
+
+        transition:
+            opacity .8s ease,
+            transform .85s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .p2-gallery.has-motion
+    .p2-gallery__project.is-visible
+    .p2-gallery__story,
+
+    .p2-gallery.has-motion
+    .p2-gallery__project.is-visible
+    .p2-gallery__visual {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .p2-gallery.has-motion
+    .p2-gallery__project.is-visible
+    .p2-gallery__visual {
+        transition-delay: .09s;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE — SMALL DESKTOP
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .p2-gallery__project,
+    .p2-gallery__project:nth-child(even) {
+        gap: clamp(24px, 3vw, 45px);
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+    }
+
+    .p2-gallery__story h3 {
+        font-size: clamp(2.55rem, 4.3vw, 4rem);
+    }
+
+    .p2-gallery__discipline > div {
+        padding-right: 15px;
+    }
+
+    .p2-gallery__discipline > div + div {
+        padding-left: 15px;
+    }
+
+    .p2-gallery__visual {
+        min-height: 370px;
+        padding: 30px 22px 55px;
+    }
+
+    .p2-gallery__action {
+        min-width: 145px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE — TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .p2-gallery__header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .p2-gallery__project,
+    .p2-gallery__project:nth-child(even) {
+        grid-template-columns: 1fr;
+
+        min-height: 0;
+        gap: 30px;
+
+        padding: 55px 0 72px;
+    }
+
+    .p2-gallery__project:nth-child(even)
+    .p2-gallery__story,
+
+    .p2-gallery__project:nth-child(even)
+    .p2-gallery__visual {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .p2-gallery__story h3 {
+        font-size: clamp(3rem, 7vw, 4.7rem);
+    }
+
+    .p2-gallery__visual {
+        min-height: clamp(310px, 57vw, 540px);
+
+        padding: 40px 45px 56px;
+    }
+
+    .p2-gallery__mobile {
+        width: clamp(105px, 18%, 145px);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE — SMALL TABLET
+   ========================================== */
+
+@media (max-width: 620px) {
+
+    .p2-gallery__discipline {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .p2-gallery__discipline > div,
+    .p2-gallery__discipline > div + div {
+        border-left: 0;
+        padding: 0;
+    }
+
+    .p2-gallery__discipline > div + div {
+        padding-top: 18px;
+
+        border-top: 1px solid rgba(
+            185, 167, 255, .15
+        );
+    }
+}
+
+/* ==========================================
+   RESPONSIVE — PHONE
+   ========================================== */
+
+@media (max-width: 520px) {
+
+    .p2-gallery__inner {
+        padding-block: 65px;
+    }
+
+    .p2-gallery__header h2 {
+        font-size: clamp(2.5rem, 10vw, 3.9rem);
+    }
+
+    .p2-gallery__story h3 {
+        font-size: clamp(2.75rem, 11vw, 4rem);
+    }
+
+    .p2-gallery__discipline p {
+        font-size: .8rem;
+    }
+
+    .p2-gallery__visual {
+        min-height: 290px;
+        padding: 28px 21px 45px;
+
+        border-radius: 16px;
+    }
+
+    .p2-gallery__mobile {
+        width: clamp(78px, 20%, 115px);
+
+        border-width: 3px;
+        padding: 3px;
+        border-radius: 17px;
+
+        bottom: -2%;
+    }
+
+    .p2-gallery__visual-label {
+        max-width: 65%;
+        font-size: .55rem;
+    }
+
+    .p2-gallery__actions {
+        gap: 10px;
+    }
+
+    .p2-gallery__action {
+        min-width: 0;
+        flex: 1 1 135px;
+
+        padding-inline: 12px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .p2-gallery *,
+    .p2-gallery *::before,
+    .p2-gallery *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==========================================
+   WORK ARCHIVE — LAYOUT & PHONE FIXES
+   ========================================== */
+
+/* Keep each project visual in its own grid area */
+
+.p2-gallery__project {
+    isolation: isolate;
+}
+
+.p2-gallery__story {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.p2-gallery__visual {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+/* Explicit alternating layout on desktop */
+
+@media (min-width: 901px) {
+
+    /* Odd projects: text LEFT, preview RIGHT */
+
+    .p2-gallery__project:nth-child(odd)
+    .p2-gallery__story {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p2-gallery__project:nth-child(odd)
+    .p2-gallery__visual {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Even projects: preview LEFT, text RIGHT */
+
+    .p2-gallery__project:nth-child(even)
+    .p2-gallery__visual {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .p2-gallery__project:nth-child(even)
+    .p2-gallery__story {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+/* ==========================================
+   KEEP PHONE INSIDE THE PROJECT STAGE
+   ========================================== */
+
+.p2-gallery__mobile {
+    right: 14px;
+    left: auto;
+    bottom: 14px;
+
+    width: clamp(85px, 17%, 130px);
+
+    transform: rotate(3deg);
+}
+
+/* When preview is LEFT, phone sits LEFT */
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__mobile {
+    left: 14px;
+    right: auto;
+
+    transform: rotate(-3deg);
+}
+
+/* Subtle movement, never too much */
+
+.p2-gallery__visual:hover
+.p2-gallery__mobile {
+    transform: rotate(0deg) translateY(-4px);
+}
+
+/* Prevent project labels overlapping the phone */
+
+.p2-gallery__project:nth-child(even)
+.p2-gallery__visual-label {
+    left: auto;
+    right: 18px;
+    text-align: right;
+}
+
+/* Keep the preview decoration contained */
+
+.p2-gallery__visual {
+    overflow: clip;
+}
+
+/* ==========================================
+   SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .p2-gallery__project,
+    .p2-gallery__project:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .p2-gallery__story,
+    .p2-gallery__visual {
+        width: 100%;
+    }
+
+    .p2-gallery__story {
+        order: 1;
+    }
+
+    .p2-gallery__visual {
+        order: 2;
+    }
+
+    .p2-gallery__mobile {
+        width: clamp(75px, 17%, 120px);
+    }
+}

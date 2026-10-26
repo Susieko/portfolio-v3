@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Pip, de BirbBuds vogel">
+  <style>
+    .birbbuds-wing { transform-box: view-box; transform-origin: 82px 132px; animation: birbbuds-wing-wiggle 2.8s ease-in-out infinite; }
+    .birbbuds-eyes { transform-box: view-box; transform-origin: 111px 92px; animation: birbbuds-eye-blink 4.5s linear infinite; }
+    @keyframes birbbuds-wing-wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-3deg); }
+    }
+    @keyframes birbbuds-eye-blink {
+      0%, 44%, 50%, 100% { transform: scaleY(1); }
+      47% { transform: scaleY(.08); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .birbbuds-wing, .birbbuds-eyes { animation: none; }
+    }
+  </style>
+
+  <!-- Tail -->
+  <path d="M64 150C42 166 32 183 36 187C46 190 68 177 83 160Z" fill="#597867"/>
+  <!-- Body -->
+  <ellipse cx="111" cy="128" rx="64" ry="67" fill="#789c86"/>
+  <!-- Belly -->
+  <ellipse cx="116" cy="144" rx="42" ry="46" fill="#f4ead7"/>
+  <!-- Wing -->
+  <path class="birbbuds-wing" d="M65 122C48 132 49 158 70 167C88 162 96 145 91 125C82 119 73 118 65 122Z" fill="#557866"/>
+  <!-- Eyes -->
+  <g class="birbbuds-eyes">
+    <circle cx="91" cy="91" r="7" fill="#26352f"/>
+    <circle cx="132" cy="91" r="7" fill="#26352f"/>
+    <circle cx="89" cy="88" r="2" fill="#ffffff"/>
+    <circle cx="130" cy="88" r="2" fill="#ffffff"/>
+  </g>
+  <!-- Beak -->
+  <path d="M105 103L118 103L111 114Z" fill="#d99b58"/>
+  <!-- Feet -->
+  <path d="M93 186V197M93 197L85 202M93 197L101 202" stroke="#b77649" stroke-width="4" stroke-linecap="round"/>
+  <path d="M130 186V197M130 197L122 202M130 197L138 202" stroke="#b77649" stroke-width="4" stroke-linecap="round"/>
+</svg>

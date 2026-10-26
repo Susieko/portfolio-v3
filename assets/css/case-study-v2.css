@@ -1,0 +1,419 @@
+/* =========================================================
+   SUSAN ABEN / CASE STUDIES — EDITORIAL V3
+   Replace the contents of assets/css/case-study-v2.css
+   Existing shared PHP case content is preserved.
+   ========================================================= */
+
+body:has(.mv-case) .site-content {
+    background: #060b1f;
+}
+
+.mv-case {
+    --case-accent: #b9a7ff;
+    --case-white: #f5f2ff;
+    --case-copy: #b9c5e3;
+    --case-muted: #8f9fc8;
+    --case-line: rgba(185, 167, 255, .19);
+    --case-reading-width: 1440px;
+    --case-media-width: 1440px;
+
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 100%;
+    overflow: clip; /* Unlike hidden, this allows the sticky Project Log */
+    
+padding:
+    clamp(48px, 5vw, 76px)
+    clamp(24px, 3vw, 44px)
+    100px;
+
+    background:
+        radial-gradient(ellipse at 90% 7%, rgba(105,142,255,.09), transparent 40%),
+        radial-gradient(ellipse at 7% 78%, rgba(185,167,255,.035), transparent 35%),
+        #060b1f;
+    color: var(--case-white);
+}
+
+.mv-case__atmosphere { pointer-events: none; }
+.mv-case__orbit { border-color: rgba(185,167,255,.065); }
+.mv-case__node {
+    background: #698eff;
+    box-shadow: 0 0 16px rgba(105,142,255,.5);
+}
+
+/* A single reading grid for titles and prose. Media may be slightly wider. */
+.mv-case__hero,
+.mv-case__facts,
+.mv-case__story,
+.mv-case__statement,
+.mv-case__footer {
+    position: relative;
+    z-index: 1;
+    width: min(100%, var(--case-reading-width));
+    margin-inline: auto;
+}
+
+.mv-case__showcase {
+    position: relative;
+    z-index: 1;
+    width: min(100%, var(--case-media-width));
+    margin-inline: auto;
+}
+
+/* Hero — tighter, less wasted horizontal and vertical space */
+.mv-case__utility {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 0 0 clamp(26px, 3.5vw, 46px);
+    color: var(--case-muted);
+    font: 600 .72rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .1em;
+}
+.mv-case__utility a,
+.mv-case__utility a span { color: var(--case-accent); }
+
+.mv-case__label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    color: var(--case-accent);
+    font: 700 .72rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .14em;
+}
+.mv-case__label i { width: auto; height: auto; background: none; }
+.mv-case__label i::after {
+    content: "✦";
+    font: 400 .65rem/1 "Manrope", sans-serif;
+    color: var(--case-accent);
+}
+
+.mv-case__hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 410px);
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+}
+
+.mv-case__eyebrow,
+.mv-case__chapter-number,
+.mv-case__chapter-label {
+    color: var(--case-accent);
+    font: 700 .72rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.mv-case__eyebrow { margin: 0 0 14px; }
+
+
+/* ==========================================
+   CASE STUDY — SINGLE-LINE PROJECT TITLES
+   ========================================== */
+
+.mv-case__heading h1 {
+    max-width: none;
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(3rem, 4.4vw, 5rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -.06em;
+
+    color: #f5f2ff;
+
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.mv-case__title-dot {
+    color: #b9a7ff;
+}
+
+
+.mv-case__intro-wrap {
+    border-left: 1px solid var(--case-line);
+    padding: 4px 0 4px clamp(22px, 3vw, 36px);
+}
+.mv-case__intro {
+    max-width: 43ch;
+    margin: 0 0 22px;
+    color: var(--case-copy);
+    font: 400 clamp(1rem, 1.12vw, 1.1rem)/1.75 "Manrope", sans-serif;
+}
+.mv-case__live,
+.mv-case__footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    width: fit-content;
+    min-height: 40px;
+    padding: 6px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(185,167,255,.48);
+    border-radius: 0;
+    background: transparent;
+    color: var(--case-white);
+    font: 600 .85rem/1.5 "Manrope", sans-serif;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+.mv-case__live span,
+.mv-case__footer a span { color: var(--case-accent); }
+.mv-case__live:hover,
+.mv-case__footer a:hover { background: transparent; color: var(--case-accent); border-color: var(--case-accent); }
+
+.mv-case__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.mv-case__tags li {
+    padding: 7px 11px;
+    border: 1px solid rgba(185,167,255,.26);
+    border-radius: 999px;
+    color: #c8d1e9;
+    font: 600 .69rem/1.3 "Manrope", sans-serif;
+    letter-spacing: .01em;
+}
+
+/* Showcase — more image, less browser chrome */
+.mv-case__showcase {
+    margin-top: clamp(32px, 4.5vw, 58px);
+    padding: 0 0 26px;
+}
+.mv-case-browser {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(185,167,255,.22);
+    border-radius: 16px;
+    background: #111a3d;
+    box-shadow: 0 25px 70px rgba(0,0,0,.23);
+}
+.mv-case-browser__bar { display: none; }
+.mv-case-browser__viewport {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #0b112c;
+}
+.mv-case-browser__viewport img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+.mv-case-phone {
+    right: -6px;
+    bottom: -12px;
+    border-color: rgba(185,167,255,.3);
+    background: #111a3d;
+}
+.mv-case__showcase-note {
+    margin: 16px 9% 0 auto;
+    color: var(--case-accent);
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+}
+
+/* Quick project facts */
+.mv-case__facts {
+    margin-top: clamp(46px, 5vw, 72px);
+    border-color: var(--case-line);
+}
+.mv-case__facts > div { padding: 22px 20px; border-color: var(--case-line); }
+.mv-case__facts > div:first-child { padding-left: 0; }
+.mv-case__facts span,
+.mv-case__footer > div > span {
+    color: var(--case-accent);
+    font: 700 .7rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .12em;
+}
+.mv-case__facts strong {
+    color: var(--case-white);
+    font: 500 .96rem/1.5 "Manrope", sans-serif;
+}
+
+/* The story — editorial sticky field notes */
+.mv-case__story {
+    display: grid;
+    grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+    gap: clamp(36px, 5vw, 80px);
+    align-items: start;
+    margin-top: clamp(70px, 8vw, 112px);
+    overflow: visible;
+}
+.mv-case__story-heading {
+    position: sticky;
+    top: 28px;
+    align-self: start;
+    min-width: 0;
+    padding: 8px 0 0;
+}
+.mv-case__story-kicker {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 22px;
+    color: var(--case-accent);
+    font: 700 .72rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+.mv-case__story-kicker span { font-size: .65rem; font-weight: 400; }
+.mv-case__story-heading h2 {
+    max-width: 410px;
+    margin: 0;
+    color: var(--case-white);
+    font: 400 clamp(2.5rem, 3.45vw, 3.8rem)/1.08 "Manrope", sans-serif;
+    letter-spacing: -.058em;
+}
+.mv-case__story-heading h2 em {
+    display: block;
+    color: var(--case-accent);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.09em;
+    font-weight: 500;
+    line-height: .96;
+}
+.mv-case__story-summary {
+    max-width: 32ch;
+    margin: 20px 0 28px;
+    color: var(--case-muted);
+    font: 400 .9rem/1.75 "Manrope", sans-serif;
+}
+.mv-case__story-meter {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.mv-case__story-track {
+    position: relative;
+    flex: 0 0 2px;
+    height: 88px;
+    border-radius: 99px;
+    background: rgba(185,167,255,.2);
+    overflow: hidden;
+}
+.mv-case__story-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#e3d9ff, #8599ff);
+    transform: scaleY(var(--case-progress, 0));
+    transform-origin: top;
+    border-radius: inherit;
+}
+.mv-case__story-counter {
+    margin: 0;
+    color: #818eb6;
+    font: 600 .8rem/1.5 "Manrope", sans-serif;
+    letter-spacing: .1em;
+}
+.mv-case__story-counter strong {
+    color: var(--case-accent);
+    font-weight: 700;
+}
+
+.mv-case__chapters,
+.mv-case__chapter { border-color: var(--case-line); }
+.mv-case__chapter {
+    gap: 20px;
+    padding: 30px 0 34px;
+}
+.mv-case__chapter.is-current .mv-case__chapter-number { color: #f5f2ff; }
+.mv-case__chapter.is-current h3 { color: #fff; }
+.mv-case__chapter h3 {
+    color: var(--case-white);
+    font: 500 clamp(1.85rem, 2.35vw, 2.55rem)/1.13 "Cormorant Garamond", Georgia, serif;
+}
+.mv-case__chapter p:not(.mv-case__chapter-label) {
+    max-width: 61ch;
+    color: var(--case-copy);
+    font: 400 clamp(.94rem, 1vw, 1rem)/1.8 "Manrope", sans-serif;
+}
+
+/* Closing thought */
+.mv-case__statement {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 22px;
+    margin-top: clamp(74px, 8vw, 112px);
+    padding: clamp(26px, 4vw, 48px);
+    border: 1px solid var(--case-line);
+    border-radius: 14px;
+    background: linear-gradient(120deg,rgba(185,167,255,.065),rgba(105,142,255,.02));
+}
+.mv-case__statement > span { color: var(--case-accent); }
+.mv-case__statement p {
+    color: var(--case-white);
+    font: italic 500 clamp(1.9rem, 3vw, 3.15rem)/1.16 "Cormorant Garamond",Georgia,serif;
+}
+.mv-case__footer {
+    margin-top: clamp(60px, 7vw, 90px);
+    border-color: var(--case-line);
+}
+.mv-case__footer p { color: var(--case-muted); font-size: .88rem; }
+
+@media (max-width: 1000px) {
+    .mv-case__hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+    .mv-case__intro-wrap { max-width: 650px; }
+    .mv-case__story { grid-template-columns: 1fr; gap: 28px; }
+    .mv-case__story-heading { position: static; }
+    .mv-case__story-meter { display: none; }
+}
+@media (max-width: 650px) {
+    .mv-case { padding: 38px 20px 76px; }
+    .mv-case__utility { font-size: .65rem; margin-bottom: 26px; }
+    .mv-case__heading h1 { font-size: clamp(3.3rem, 12vw, 4.6rem); }
+    .mv-case__intro-wrap { padding-left: 18px; }
+    .mv-case__showcase { padding: 0; margin-top: 34px; }
+    .mv-case-browser__viewport { aspect-ratio: 16/10; }
+    .mv-case-phone { right: 0; bottom: 0; }
+    .mv-case__facts { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .mv-case__facts > div { padding: 17px 12px; }
+    .mv-case__facts > div:nth-child(2n) { border-right: 0; }
+    .mv-case__story { margin-top: 70px; }
+    .mv-case__chapter { grid-template-columns: 24px minmax(0,1fr); gap: 12px; }
+    .mv-case__statement { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mv-case__story-fill { transition: none; }
+}
+
+/* Wobbi v0.2 — playable case-study media. */
+/* CASE STUDY: Fill the widescreen video frame */
+
+.mv-case--wobbi .mv-case-browser__viewport {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+}
+
+.mv-case--wobbi
+.mv-case-browser__viewport > video.mv-case__video {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 0;
+}
