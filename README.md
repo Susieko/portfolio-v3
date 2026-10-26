@@ -6,6 +6,9 @@ A custom WordPress portfolio where **design meets development**. Portfolio V3 br
 
 **Custom WordPress theme** · **Dark & light mode** · **NL / EN** · **Responsive design**
 
+<img width="1879" height="947" alt="image" src="https://github.com/user-attachments/assets/48be3ec7-6727-4ff4-96d7-99bf0bb64fa8" />
+
+
 ---
 
 ## ✨ Highlights
